@@ -10,9 +10,9 @@
     "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "declarationDir": "dist/types",
+    "declarationDir": "lib/types",
     "esModuleInterop": true,
-    "outDir": "dist/lib",
+    "outDir": "lib/types",
     "jsx": "react",
     "typeRoots": [
       "node_modules/@types"
