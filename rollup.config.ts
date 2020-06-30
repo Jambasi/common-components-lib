@@ -11,22 +11,14 @@ require('rollup-plugin-replace')({
   'process.env.NODE_ENV': JSON.stringify('production')
 })
 const pkg = require('./package.json')
-console.log(process.env.NODE_ENV)
 const libraryName = 'react-components'
 process.env.NODE_ENV = "production"
 export default {
   input: `src/${libraryName}.ts`,
   treeshake: true,
   output: [
-    { file: pkg.main, name: camelCase(libraryName), format: 'umd', sourcemap: true, plugins: [terser({ compress: true,module: true})] },
-    { file: pkg.module, format: 'es', sourcemap: true, plugins: [terser({
-      compress: {
-        inline:true
-      },
-      output: {
-          comments: false
-      }
-  })] }
+    { file: pkg.main, name: camelCase(libraryName), format: 'umd', sourcemap: true},
+    { file: pkg.module, format: 'es', sourcemap: true}
   ],
   // Indicate here external modules you don't wanna include in your bundle (i.e.: 'lodash')
   external: ["lodash","react"],
